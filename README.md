@@ -1,9 +1,11 @@
 # singolo
 
-Demo https://rss-maksim.github.io/singolo
+Final demo https://rss-maksim.github.io/singolo/index.html
 
-Demo1 https://rss-maksim.github.io/singolo/singolo1.html
+------------------
 
-Demo2: https://rss-maksim.github.io/singolo/singolo2.html
+Intermediate demo #1 https://rss-maksim.github.io/singolo/singolo1.html
 
-Demo3: https://rss-maksim.github.io/singolo/singolo3.html
+Intermediate demo #2 https://rss-maksim.github.io/singolo/singolo2.html
+
+Intermediate demo #3 https://rss-maksim.github.io/singolo/singolo3.html
