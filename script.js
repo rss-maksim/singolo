@@ -1,4 +1,7 @@
 (function () {
+    const activeClass = 'active';
+    let pictureCounter = 0;
+
     window.addEventListener('DOMContentLoaded', domReady);
     window.addEventListener("hashchange", onHashChanged, false);
 
@@ -7,10 +10,11 @@
 
         document.querySelector('.tags-container').addEventListener('click', onPortfolioTagClicked);
         document.querySelector('.gallery').addEventListener('click', onPortfolioImageClicked);
-        document.querySelector('.arrow.arrow-left').addEventListener('click', onArrowLeftClicked);
-        document.querySelector('.arrow.arrow-right').addEventListener('click', onArrowRightClicked);
+        document.querySelector('.arrow.arrow-left').addEventListener('click', onArrowClicked(-1));
+        document.querySelector('.arrow.arrow-right').addEventListener('click', onArrowClicked(1));
+        document.querySelector('.phone-screen-vertical-img').addEventListener('click', onPhoneScreenVerticalClicked);
+        document.querySelector('.phone-screen-horizontal-img').addEventListener('click', onPhoneScreenHorizontalClicked);
         document.getElementById('contact-form').addEventListener('submit', onFormSubmitted);
-
     }
 
     function onHashChanged(event) {
@@ -28,12 +32,29 @@
         }
     }
 
-    function onArrowLeftClicked(event) {
-        console.log(event)
+    function onArrowClicked (number) {
+        return function () {
+            if (number < 0 && pictureCounter <= 0) {
+                return;
+            }
+            pictureCounter += number;
+            const images = document.querySelectorAll('.slider-carousel-picture');
+            const currentPictureIndex = pictureCounter % images.length;
+            document.querySelector('.slider-carousel').style.background = currentPictureIndex % 2 ? '#648bf0' : '#f06c64';
+            for (let i = 0; i < images.length; i++) {
+                i === currentPictureIndex
+                    ? images[i].classList.add(activeClass)
+                    : images[i].classList.remove(activeClass);
+            }
+        }
     }
 
-    function onArrowRightClicked(event) {
-        console.log(event)
+    function onPhoneScreenVerticalClicked(event) {
+        document.querySelector('.phone-screen-vertical').classList.add(activeClass);
+    }
+
+    function onPhoneScreenHorizontalClicked(event) {
+        document.querySelector('.phone-screen-horizontal').classList.add(activeClass);
     }
 
     function onPortfolioTagClicked(event) {

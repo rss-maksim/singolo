@@ -91,11 +91,9 @@ body {
     box-sizing: border-box;
     height: 600px;
     width: 100%;
-    padding: 0 72px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #f06c64;
     position: relative;
 }
 
@@ -105,9 +103,17 @@ body {
     align-items: center;
     justify-content: center;
     display: flex;
+    background-color: #F06C64;
+}
+
+.phone-screen-vertical-img {
+    cursor: pointer;
 }
 
 .slider-carousel-picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     opacity: 0;
     visibility: hidden;
     position: absolute;
@@ -120,6 +126,35 @@ body {
     visibility: visible;
     position: static;
     z-index: 1;
+}
+
+.phone-screen-vertical,
+.phone-screen-horizontal {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    background-color: #2d303a;
+}
+
+.phone-screen-vertical {
+    width: 190px;
+    height: 335px;
+    left: 161px;
+    top: 123px;
+}
+
+.phone-screen-horizontal {
+    width: 335px;
+    height: 190px;
+    left: 448px;
+    top: 191px;
+}
+
+.phone-screen-vertical.active,
+.phone-screen-horizontal.active {
+    visibility: visible;
+    opacity: 1;
 }
 
 .slider > img {
@@ -163,7 +198,7 @@ body {
     bottom: 0;
     width: 100%;
     height: 15px;
-    background-color: #ea676b;
+    background-color: transparent;
 }
 
 .services {
