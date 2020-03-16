@@ -63,7 +63,7 @@ body {
 
 .nav-item a:hover {
     cursor: pointer;
-    text-decoration: underline;
+    color: #bc5c59;
 }
 
 .nav-item + .nav-item {
