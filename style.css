@@ -99,13 +99,38 @@ body {
     position: relative;
 }
 
+.slider-carousel {
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.slider-carousel-picture {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    transition: 0.3s ease;
+    z-index: -1;
+}
+
+.slider-carousel-picture.active {
+    opacity: 1;
+    visibility: visible;
+    position: static;
+    z-index: 1;
+}
+
 .slider > img {
     margin-bottom: 10px;
 }
 
 .slider .arrow {
+    height: 100%;
     position: absolute;
-    top: 46%;
+    width: 60px;
+    z-index: 1;
     cursor: pointer;
 }
 
@@ -114,12 +139,22 @@ body {
 }
 
 .slider .arrow-left {
-    left: 40px;
+    left: 0;
 }
 
 .slider .arrow-right {
-    right: 40px;
-    transform: rotate(180deg);
+    right: 0;
+}
+
+.arrow-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.arrow-img.arrow-img-right {
+    transform: translate(-50%, -50%) rotate(180deg);
 }
 
 .slider .bottom-line {

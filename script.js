@@ -7,6 +7,9 @@
 
         document.querySelector('.tags-container').addEventListener('click', onPortfolioTagClicked);
         document.querySelector('.gallery').addEventListener('click', onPortfolioImageClicked);
+        document.querySelector('.arrow.arrow-left').addEventListener('click', onArrowLeftClicked);
+        document.querySelector('.arrow.arrow-right').addEventListener('click', onArrowRightClicked);
+        document.getElementById('contact-form').addEventListener('submit', onFormSubmitted);
 
     }
 
@@ -23,6 +26,14 @@
         if (link) {
             link.parentNode.classList.add('active');
         }
+    }
+
+    function onArrowLeftClicked(event) {
+        console.log(event)
+    }
+
+    function onArrowRightClicked(event) {
+        console.log(event)
     }
 
     function onPortfolioTagClicked(event) {
@@ -63,7 +74,6 @@
     }
 
     function onPortfolioImageClicked(event) {
-        console.log(event.target)
         const wrapper = event.target.parentNode;
         if (!wrapper.classList.contains('picture')) {
             return;
@@ -75,15 +85,18 @@
         wrapper.classList.add('active');
     }
 
-    function getImagesRow(classList) {
-        return classList.contains('web-design')
-                ? 1
-                : classList.contains('graphic-design')
-                ? 2
-                : classList.contains('artwork')
-                ? 3
-                : 0;
+    function onFormSubmitted(event) {
+        event.preventDefault();
+        const elements = event.target.elements;
+        const form = {};
+        for (let i = 0; i < elements.length; i++) {
+            form[elements[i].name] = elements[i].value;
+        }
+        const message = `Письмо отправлено\n${form.subject === 'Singolo' ? 'Тема: Singolo' : 'Без темы'}\n${form.description === 'Portfolio project' ? 'Описание: Portfolio project' : 'Без описания'}`;
+        alert(message);
     }
 
-
+    function getImagesRow(classList) {
+        return classList.contains('web-design') ? 1 : classList.contains('graphic-design') ? 2 : classList.contains('artwork') ? 3 : 0;
+    }
 })();

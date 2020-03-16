@@ -32,13 +32,20 @@
         <div class="border"></div>
     </header>
     <section class="slider">
-        <img src="assets/iphone_vertical.png" alt="iPhone picture vertical" width="242" height="482">
-        <img src="assets/iphone_horizontal.png" alt="iPhone picture horizontal" width="486" height="244">
+        <div class="slider-carousel">
+            <div class="slider-carousel-picture active">
+                <img src="assets/iphone_vertical.png" alt="iPhone picture vertical" width="242" height="482">
+                <img src="assets/iphone_horizontal.png" alt="iPhone picture horizontal" width="486" height="244">
+            </div>
+            <div class="slider-carousel-picture">
+                <img src="assets/iphone_vertical.png" alt="iPhone picture vertical" width="242" height="482">
+            </div>
+        </div>
         <div class="arrow arrow-left">
-            <img src="assets/chev.svg" alt="Arrow left">
+            <img class="arrow-img arrow-img-left" src="assets/chev.svg" alt="Arrow left">
         </div>
         <div class="arrow arrow-right">
-            <img src="assets/chev.svg" alt="Arrow right">
+            <img class="arrow-img arrow-img-right" src="assets/chev.svg" alt="Arrow right">
         </div>
         <div class="bottom-line"></div>
     </section>
@@ -249,11 +256,11 @@
             Fusce dapibus, Tellus AC Cursus Commodo, Cortor Mauris Condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce Dapibus, Tellus AC Cursus Commodo, Cortor Mauris Condimentum Nibh.
         </div>
         <div class="form-container">
-            <form action="">
+            <form action="" id="contact-form">
                 <input class="quote-input" type="text" name="name" required placeholder="Name (Required)" />
-                <input class="quote-input" type="text" name="email" required placeholder="Email (Required)" />
+                <input class="quote-input" type="email" name="email" required placeholder="Email (Required)" />
                 <input class="quote-input" type="text" name="subject" placeholder="Subject" />
-                <textarea class="quote-input" placeholder="Describe your project in detail..."></textarea>
+                <textarea class="quote-input" name="description" placeholder="Describe your project in detail..."></textarea>
                 <button type="submit" class="submit-button">Submit</button>
             </form>
             <div class="contact-information">
