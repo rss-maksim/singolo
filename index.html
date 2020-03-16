@@ -5,9 +5,10 @@
     <title>Singolo</title>
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <script src="./script.js"></script>
 </head>
 <body>
-    <header class="header">
+    <header id="home" class="header">
         <div class="header-logo">
             <h1>singolo</h1>
         </div>
@@ -16,33 +17,40 @@
                 <a href="">HOME</a>
             </li>
             <li class="nav-item">
-                <a href="">SERVICES</a>
+                <a href="#services">SERVICES</a>
             </li>
             <li class="nav-item">
-                <a href="">PORTFOLIO</a>
+                <a href="#portfolio">PORTFOLIO</a>
             </li>
             <li class="nav-item">
-                <a href="">ABOUT</a>
+                <a href="#about">ABOUT</a>
             </li>
             <li class="nav-item">
-                <a href="">CONTACT</a>
+                <a href="#contact">CONTACT</a>
             </li>
         </ul>
         <div class="border"></div>
     </header>
     <section class="slider">
-        <img src="assets/iphone_vertical.png" alt="iPhone picture vertical" width="242" height="482">
-        <img src="assets/iphone_horizontal.png" alt="iPhone picture horizontal" width="486" height="244">
+        <div class="slider-carousel">
+            <div class="slider-carousel-picture active">
+                <img src="assets/iphone_vertical.png" alt="iPhone picture vertical" width="242" height="482">
+                <img src="assets/iphone_horizontal.png" alt="iPhone picture horizontal" width="486" height="244">
+            </div>
+            <div class="slider-carousel-picture">
+                <img src="assets/iphone_vertical.png" alt="iPhone picture vertical" width="242" height="482">
+            </div>
+        </div>
         <div class="arrow arrow-left">
-            <img src="assets/chev.svg" alt="Arrow left">
+            <img class="arrow-img arrow-img-left" src="assets/chev.svg" alt="Arrow left">
         </div>
         <div class="arrow arrow-right">
-            <img src="assets/chev.svg" alt="Arrow right">
+            <img class="arrow-img arrow-img-right" src="assets/chev.svg" alt="Arrow right">
         </div>
         <div class="bottom-line"></div>
     </section>
 
-    <section class="services">
+    <section id="services" class="services">
         <h4>Our Services</h4>
         <div class="services-description">
             Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor
@@ -107,17 +115,17 @@
         <div class="bottom-line"></div>
     </section>
 
-    <div class="top-container">
+    <div id="portfolio" class="top-container">
         <header>
-            <div class="header-logo">Portfolio</div>
+            <div class="header-logo-portfolio">Portfolio</div>
             <div class="header-description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</div>
         </header>
         <section class="projects">
             <div class="tags-container">
-                <div class="tag active">All</div>
-                <div class="tag">Web Design</div>
-                <div class="tag">Graphic Design</div>
-                <div class="tag">Artwork</div>
+                <div class="tag active all">All</div>
+                <div class="tag web-design">Web Design</div>
+                <div class="tag graphic-design">Graphic Design</div>
+                <div class="tag artwork">Artwork</div>
             </div>
             <div class="gallery">
                 <div class="picture">
@@ -160,7 +168,7 @@
         </section>
         <div class="bottom-line"></div>
     </div>
-    <div class="bottom-container">
+    <div id="about" class="bottom-container">
         <section class="about">
             <h3 class="about-header">About Us</h3>
             <div class="about-description">
@@ -242,17 +250,17 @@
         <div class="bottom-line"></div>
     </div>
 
-    <div class="quote-container">
+    <div id="contact" class="quote-container">
         <h3 class="quote-header">Get a Quote</h3>
         <div class="quote-description">
             Fusce dapibus, Tellus AC Cursus Commodo, Cortor Mauris Condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce Dapibus, Tellus AC Cursus Commodo, Cortor Mauris Condimentum Nibh.
         </div>
         <div class="form-container">
-            <form action="">
+            <form action="" id="contact-form">
                 <input class="quote-input" type="text" name="name" required placeholder="Name (Required)" />
-                <input class="quote-input" type="text" name="email" required placeholder="Email (Required)" />
+                <input class="quote-input" type="email" name="email" required placeholder="Email (Required)" />
                 <input class="quote-input" type="text" name="subject" placeholder="Subject" />
-                <textarea class="quote-input" placeholder="Describe your project in detail..."></textarea>
+                <textarea class="quote-input" name="description" placeholder="Describe your project in detail..."></textarea>
                 <button type="submit" class="submit-button">Submit</button>
             </form>
             <div class="contact-information">
