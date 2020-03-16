@@ -6,6 +6,8 @@
         changeActiveNavItem(event.target.location.hash.slice(1));
 
         document.querySelector('.tags-container').addEventListener('click', onPortfolioTagClicked);
+        document.querySelector('.gallery').addEventListener('click', onPortfolioImageClicked);
+
     }
 
     function onHashChanged(event) {
@@ -35,28 +37,42 @@
         const images = document.querySelectorAll('.gallery > .picture');
         const value = getImagesRow(event.target.classList);
         for (let i = 0; i < images.length; i++) {
+            const image = images[i];
             if (value === 1) {
                 if (i > 3) {
-                    images[i].style.display = 'none';
+                    image.style.display = 'none';
                 } else {
-                    images[i].style.display = 'block';
+                    image.style.display = 'block';
                 }
             } else if (value === 2) {
                 if (i < 4 || i > 7) {
-                    images[i].style.display = 'none';
+                    image.style.display = 'none';
                 } else {
-                    images[i].style.display = 'block';
+                    image.style.display = 'block';
                 }
             } else if (value === 3) {
                 if (i < 8) {
-                    images[i].style.display = 'none';
+                    image.style.display = 'none';
                 } else {
-                    images[i].style.display = 'block';
+                    image.style.display = 'block';
                 }
             } else {
-                images[i].style.display = 'block';
+                image.style.display = 'block';
             }
         }
+    }
+
+    function onPortfolioImageClicked(event) {
+        console.log(event.target)
+        const wrapper = event.target.parentNode;
+        if (!wrapper.classList.contains('picture')) {
+            return;
+        }
+        const active = document.querySelector('.picture.active');
+        if (active) {
+            active.classList.remove('active');
+        }
+        wrapper.classList.add('active');
     }
 
     function getImagesRow(classList) {

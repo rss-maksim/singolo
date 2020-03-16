@@ -287,6 +287,15 @@ body {
     background-color: #464b5e;
     cursor: pointer;
     overflow: hidden;
+    box-sizing: border-box;
+}
+
+.picture.active {
+    border: 5px solid #f06c64;
+}
+
+.picture:active {
+    border: 5px solid #f06c64;
 }
 
 .picture > img {
